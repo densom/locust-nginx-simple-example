@@ -22,6 +22,7 @@ Open a command prompt and navigate to `my-site`.  Then, enter the following comm
 `grunt build` - uses grunt module to build website into the `dist` directory
 
 ## Build and run the containers
+Navigate back to the root of the git repo.
 
 1. Run `docker-compose up --build`
 1. Navigate to [http://localhost:8089/](http://localhost:8089/) to get to Locust Web UI
