@@ -1,0 +1,21 @@
+version: '2'
+services:
+  my-nginx:
+    build:
+        context: .
+        dockerfile: my-nginx.Dockerfile
+    networks: 
+        - my-network
+  my-locust:
+    build:
+        context: .
+        dockerfile: my-locust.Dockerfile
+    environment: 
+        - LOCUST_MODE=standalone
+        - TARGET_URL=http://my-nginx
+    ports:
+        - "8089:8089"
+    networks:
+        - my-network
+networks:
+    my-network:
