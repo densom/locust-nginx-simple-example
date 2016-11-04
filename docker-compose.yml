@@ -1,9 +1,11 @@
 version: '2'
 services:
-  my-nginx:
+  nodejs:
     build:
         context: .
-        dockerfile: my-nginx.Dockerfile
+        dockerfile: nodejs.Dockerfile
+    ports:
+        - "8088:80"
     networks: 
         - my-network
   my-locust:
@@ -12,7 +14,7 @@ services:
         dockerfile: my-locust.Dockerfile
     environment: 
         - LOCUST_MODE=standalone
-        - TARGET_URL=http://my-nginx
+        - TARGET_URL=http://nodejs
     ports:
         - "8089:8089"
     networks:
