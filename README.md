@@ -10,9 +10,19 @@ Install the following:
 * [Node](https://nodejs.org/en/download/)
 * Bower - `npm install -g bower`
 
-## Usage
+# Usage
 
-Steps:
+## Build the web site
+Open a command prompt and navigate to `my-site`.  Then, enter the following commands:
+
+`npm install` - installs npm modules referenced in package.json
+
+`bower install` - installs bower components referenced in bower.json
+
+`grunt build` - uses grunt module to build website into the `dist` directory
+
+## Build and run the containers
+
 1. Run `docker-compose up --build`
 1. Navigate to [http://localhost:8089/](http://localhost:8089/) to get to Locust Web UI
 1. Run your tests
